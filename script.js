@@ -6,6 +6,15 @@ $(document).ready(function() {
     $(".submit").click(function() {
         var apiKey = "&appid=11283a9a367132ea8ba6c11df14c96c6";
         var city = $(".inputText").val();
+        $('input[type="text"]').each(function() {
+            var city = []
+            var id = $(this).attr('id');
+            var value = $(this).val();
+            localStorage.setItem(id, value);
+            var value = localStorage.getItem(id);
+
+
+        });
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + apiKey
 
         $.ajax({
@@ -15,10 +24,10 @@ $(document).ready(function() {
             var widget = show(response);
             $("#show").html(widget);
             $(".inputText").val("");
-            console.log(queryURL);
 
 
-            console.log(response);
+
+
 
         })
 
