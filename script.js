@@ -1,3 +1,7 @@
+var now = moment().format("dddd, MMMM Do, YYYY");
+$('#date').append(now);
+
+
 $(document).ready(function() {
     $(".submit").click(function() {
         var apiKey = "&appid=11283a9a367132ea8ba6c11df14c96c6";
@@ -23,9 +27,9 @@ $(document).ready(function() {
 
 function show(response) {
     return "<p>City: " + response.name + "," + response.sys.country + "</p>" +
-        "<p>Description: " + response.weather[0].main + "</p>" +
-        "<p>Temperature: " + response.main.temp + "F" + "</p>" +
-        "<p>Wind Speed: " + response.wind.speed + "MPH" + "</p>" +
-        "<p>Humidity: " + response.main.humidity + "%" + "</p>"
+        "<p>Description: <img src='https://openweathermap.org/img/w/" + response.weather[0].icon + ".png'> " + response.weather[0].main + "</p>" +
+        "<p>Temperature: " + response.main.temp + "&deg;F</p>" +
+        "<p>Wind Speed: " + response.wind.speed + "MPH</p>" +
+        "<p>Humidity: " + response.main.humidity + "%</p>"
 
 }
