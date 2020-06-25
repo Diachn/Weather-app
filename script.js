@@ -17,7 +17,7 @@ $(document).ready(function() {
             var input = $(".inputText").val();
 
             localStorage.setItem("city", JSON.stringify(input));
-            localStorage.getItem("city", (input));
+            localStorage.getItem("city");
 
 
         })
@@ -25,9 +25,6 @@ $(document).ready(function() {
     })
 
 });
-
-
-
 
 function show(response) {
     return "<p>City: " + response.name + "," + response.sys.country + "</p>" +
