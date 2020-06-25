@@ -17,16 +17,15 @@ $(document).ready(function() {
             var input = $(".inputText").val();
 
             localStorage.setItem("city", JSON.stringify(input));
-
-            //var citySearch = $(".inputText")
-            //window.localStorage.setItem('input', JSON.stringify(input));
-
+            localStorage.getItem("city", (input));
 
 
         })
 
-    });
+    })
+
 });
+
 
 
 
